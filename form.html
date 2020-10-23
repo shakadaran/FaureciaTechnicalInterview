@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+   
+    <link rel="stylesheet" href="style.css">
+    <div class="formArea">
+        <form>
+            <div class="column side">
+
+                <legend> Directory</legend>
+                <input type="file" id="imgInp" hidden="hidden" />
+                <button type="button" id="custom-button">Load</button>
+                <span id="custom-text">No file chosen, yet.</span>
+                <label for="imgInp">Local path to store the session data.</label>
+                <legend> Label</legend>
+                <input type="text" id="label" />
+                <label for="imgInp">Title of the recording session</label>
+                <legend> Description</legend>
+                <select id="descriptions" name="desc">
+                    <option value="desc1">Description A</option>
+                    <option value="desc2">Description B</option>
+                    <option value="desc3">Description C</option>
+                    <option value="desc4">Description D</option>
+                </select>
+                <label for="descriptions">Content of the recording session(plant, workbench, parts)</label>
+                <legend> Standard Cycle Time Duration</legend>
+                <input type="text" id="sctd" />
+                <label for="sctd">Title of the recording session</label>
+                <legend> Color Picker</legend>
+                <input type="color" value="#ff0000" id="picker1">
+                <input type="text" id="code1" />
+                <input type="color" value="#ff0000" id="picker2">
+                <input type="text" id="code2" />
+
+            </div>
+            <div class="column middle">
+                <img id="blah" src="" alt="your image" hidden=TRUE />
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>
+<script>
+    const realFileBtn = document.getElementById("imgInp");
+    const customBtn = document.getElementById("custom-button");
+    const customTxt = document.getElementById("custom-text");
+
+    customBtn.addEventListener("click", function () {
+        realFileBtn.click();
+    });
+
+    realFileBtn.addEventListener("change", function () {
+        if (realFileBtn.value) {
+            customTxt.innerHTML = realFileBtn.value.match(
+                /[\/\\]([\w\d\s\.\-\(\)]+)$/
+            )[1];
+        } else {
+            customTxt.innerHTML = "No file chosen, yet.";
+        }
+    });
+    $("#imgInp").change(function () {
+        readURL(this);
+    });
+    function readURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                $('#blah').attr('src', e.target.result);
+                $('#blah').attr('hidden', false);
+            }
+
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+
+
+
+    document.getElementById("picker1").onchange = function () {
+        document.getElementById("code1").value = this.value;
+    }
+    document.getElementById("picker2").onchange = function () {
+        document.getElementById("code2").value = this.value;
+    }
+    document.getElementById("code1").onchange = function () {
+        document.getElementById("picker1").value = this.value;
+    }
+    document.getElementById("code2").onchange = function () {
+        document.getElementById("picker2").value = this.value;
+    }
+
+</script>

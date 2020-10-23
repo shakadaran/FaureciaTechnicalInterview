@@ -1,0 +1,113 @@
+.formArea {
+    overflow: auto;
+    background: #cee7f0;
+    padding: 10px 20px;
+    margin: 10px auto;
+    padding: 20px;
+    border-radius: 8px;
+    font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+
+
+.formArea legend {
+    font-size: 1.4em;
+    margin-bottom: 10px;
+}
+
+.formArea label {
+    display: block;
+    margin-bottom: 8px;
+    color: cadetblue;
+    font-size: smaller;
+}
+
+.formArea input[type="text"],
+.formArea select {
+    font-family: Georgia, "Times New Roman", Times, serif;
+    background: rgba(255, 255, 255, .1);
+    border: none;
+    border-radius: 1px;
+    font-size: 15px;
+    margin: 0;
+    outline: 0;
+    padding: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    background-color: #e8eeef;
+    color: #8a97a0;
+    -webkit-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.03) inset;
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.03) inset;
+    margin-bottom: 10px;
+}
+
+.formArea input[type="text"]:focus,    
+.formArea select:focus {
+    background: #d2d9dd;
+}
+
+.formArea select {
+    -webkit-appearance: menulist-button;
+    height: 35px;
+}
+
+.column {
+    float: left;
+    padding: 10px;
+}
+
+
+.column.side {
+    width: 30%;
+}
+
+
+.column.middle {
+    width: 60%;
+    padding: 20px;
+}
+
+img {
+    max-width: 800px;
+    max-height: 800px;
+}
+
+input[type="color"] {
+    -webkit-appearance: none;
+    width: 30px;
+    height: 30px;
+    border: 0;
+    border-radius: 20%;
+    padding: 0;
+    overflow: auto;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, .1);
+}
+
+input[type="color"]::-webkit-color-swatch-wrapper {
+    padding: 0;
+}
+
+input[type="color"]::-webkit-color-swatch {
+    border: none;
+}
+
+#custom-button {
+    padding: 10px;
+    color: white;
+    background-color: #009578;
+    border: 1px solid #000;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#custom-button:hover {
+    background-color: #00b28f;
+}
+
+#custom-text {
+    margin-left: 10px;
+    font-family: sans-serif;
+    color: #aaa;
+}
